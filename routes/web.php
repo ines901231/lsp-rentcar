@@ -28,6 +28,10 @@ Route::get('users', function()
     return view('users.index');
 })->name('users')->middleware('auth');
 
-Route::get('/mobil', function(){
+Route::get('mobil', function(){
     return view('mobil.index');
 })->name('mobil')->middleware('auth');
+
+Route::get('transaksi', function() {
+    return view('transaksi.index');
+})->name('transaksi')->middleware('auth');
