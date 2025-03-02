@@ -164,7 +164,7 @@
 <!-- Navbar End -->
 
             <br>
-            @livewire('UserComponent')
+            @livewire('LaporanComponent')
         </div>
         <!-- Content End -->
 
