@@ -22,3 +22,8 @@ Route::get('login', [LoginController::class, 'index'])->name('login');
 Route::post('login', [LoginController::class, 'process'])->name('login.process');
 
 Route::get('login/keluar', [LoginController::class, 'keluar'])->name('login.keluar');
+
+Route::get('users', function()
+{
+    return view('users.index');
+})->name('users')->middleware('auth');
