@@ -27,3 +27,7 @@ Route::get('users', function()
 {
     return view('users.index');
 })->name('users')->middleware('auth');
+
+Route::get('/mobil', function(){
+    return view('mobil.index');
+})->name('mobil')->middleware('auth');

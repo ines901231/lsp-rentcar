@@ -29,6 +29,7 @@
 
     <!-- Template Stylesheet -->
     <link href="{{ asset('assets/css/style.css')}}" rel="stylesheet">
+    @livewireScripts
 </head>
 
 <body>
@@ -62,7 +63,7 @@
                     <a href="index.html" class="nav-item nav-link active"><i class="fa fa-tachometer-alt me-2"></i>Dashboard</a>
                     <a href="widget.html" class="nav-item nav-link"><i class="fa fa-shopping-cart me-2"></i>Transaksi</a>
                     <a href="form.html" class="nav-item nav-link"><i class="fa fa-file-archive me-2"></i>Log Transaksi</a>
-                    <a href="{{ route('mobil') }}" class="nav-item nav-link"><i class="fa fa-car me-2"></i>Mobil</a>
+                    <a href="table.html" class="nav-item nav-link"><i class="fa fa-car me-2"></i>Mobil</a>
                     <a href="{{ route('users') }}" class="nav-item nav-link"><i class="fa fa-users me-2"></i>Users</a>
                 </div>
             </nav>
@@ -162,41 +163,8 @@
 </nav>
 <!-- Navbar End -->
 
-
-            <!-- Sale & Revenue Start -->
-            <div class="container-fluid pt-4 px-4">
-                <div class="row g-4">
-                    <div class="col-sm-6 col-xl-4">
-                        <div class="bg-light rounded d-flex align-items-center justify-content-between p-4">
-                            <i class="fa fa-dollar-sign fa-3x text-primary"></i>
-                            <div class="ms-3">
-                                <p class="mb-2">Total Transaksi</p>
-                                <h6 class="mb-0">0</h6>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-6 col-xl-4">
-                        <div class="bg-light rounded d-flex align-items-center justify-content-between p-4">
-                            <i class="fa fa-car fa-3x text-primary"></i>
-                            <div class="ms-3">
-                                <p class="mb-2">Mobil</p>
-                                <h6 class="mb-0">0</h6>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-6 col-xl-4">
-                        <div class="bg-light rounded d-flex align-items-center justify-content-between p-4">
-                            <i class="fa fa-users fa-3x text-primary"></i>
-                            <div class="ms-3">
-                                <p class="mb-2">Users</p>
-                                <h6 class="mb-0">0</h6>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- Sale & Revenue End -->
-            
+            <br>
+            @livewire('MobilComponent')
         </div>
         <!-- Content End -->
 
@@ -218,6 +186,7 @@
 
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
+    @livewireScripts
 </body>
 
 </html>
