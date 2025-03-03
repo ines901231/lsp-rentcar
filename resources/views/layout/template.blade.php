@@ -1,9 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="utf-8">
-    <title>@yield('title')</title>
+    <title>Horizon Backstage</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="keywords">
     <meta content="" name="description">
@@ -29,29 +28,30 @@
 
     <!-- Template Stylesheet -->
     <link href="{{ asset('assets/css/style.css')}}" rel="stylesheet">
-    @livewireScripts
 </head>
-
 <body>
     <div class="container-xxl position-relative bg-white d-flex p-0">
-
-        @include('layout.sidebar')
-        <!-- Content Start -->
+        
+        <!-- Sidebar -->
+        <div class="sidebar pe-4 pb-3">
+            @include('layout.sidebar')
+        </div>
+        
+        <!-- Content -->
         <div class="content">
+            <!-- Navbar -->
             @include('layout.navbar')
-            @include('layout.card')
 
+            <!-- Main Content -->
             <div class="container-fluid pt-4 px-4">
-                <div class="row g-4">
-                    @yield('content')
-                </div>
+                @yield('content')
             </div>
         </div>
-        <!-- Content End -->
-
 
         <!-- Back to Top -->
-        <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+        <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top">
+            <i class="bi bi-arrow-up"></i>
+        </a>
     </div>
 
     <!-- JavaScript Libraries -->
@@ -66,8 +66,6 @@
     <script src="{{ asset('assets/lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js')}}"></script>
 
     <!-- Template Javascript -->
-    <script src="js/main.js"></script>
-    @livewireScripts
+    <script src="{{ asset('assets/js/main.js')}}"></script>
 </body>
-
 </html>

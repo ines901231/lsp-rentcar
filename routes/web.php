@@ -23,6 +23,11 @@ Route::post('login', [LoginController::class, 'process'])->name('login.process')
 
 Route::get('login/keluar', [LoginController::class, 'keluar'])->name('login.keluar');
 
+Route::get('admin', function()
+{
+    return view('admin');
+})->name('admin')->middleware('auth');
+
 Route::get('users', function()
 {
     return view('users.index');

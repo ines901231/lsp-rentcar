@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>DASHMIN - Bootstrap Admin Template</title>
+    <title>Horizon Backstage</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="keywords">
     <meta content="" name="description">
@@ -47,7 +47,7 @@
         <div class="sidebar pe-4 pb-3">
             <nav class="navbar bg-light navbar-light">
                 <a href="index.html" class="navbar-brand mx-4 mb-3">
-                    <h3 class="text-primary"><i class="fa fa-hashtag me-2"></i>DASHMIN</h3>
+                    <h3 class="text-primary"><i class="me-2"></i>BACKSTAGE</h3>
                 </a>
                 <div class="d-flex align-items-center ms-4 mb-4">
                     <div class="position-relative">
@@ -60,11 +60,11 @@
                     </div>
                 </div>
                 <div class="navbar-nav w-100">
-                    <a href="index.html" class="nav-item nav-link active"><i class="fa fa-tachometer-alt me-2"></i>Dashboard</a>
+                    <a href="{{ route('admin') }}" class="nav-item nav-link"><i class="fa fa-tachometer-alt me-2"></i>Dashboard</a>
                     <a href="{{ route('transaksi') }}" class="nav-item nav-link"><i class="fa fa-shopping-cart me-2"></i>Transaksi</a>
                     <a href="{{ route('laporan') }}" class="nav-item nav-link"><i class="fa fa-file-archive me-2"></i>Log Transaksi</a>
                     <a href="{{ route('mobil') }}" class="nav-item nav-link"><i class="fa fa-car me-2"></i>Mobil</a>
-                    <a href="{{ route('users') }}" class="nav-item nav-link"><i class="fa fa-users me-2"></i>Users</a>
+                    <a href="{{ route('users') }}" class="nav-item nav-link active"><i class="fa fa-users me-2"></i>Users</a>
                 </div>
             </nav>
         </div>
@@ -78,18 +78,18 @@
     <a href="index.html" class="navbar-brand d-flex d-lg-none me-4">
         <h2 class="text-primary mb-0"><i class="fa fa-hashtag"></i></h2>
     </a>
-    <a href="#" class="sidebar-toggler flex-shrink-0">
+    {{-- <a href="#" class="sidebar-toggler flex-shrink-0">
         <i class="fa fa-bars"></i>
-    </a>
-    <form class="d-none d-md-flex ms-4">
+    </a> --}}
+    {{-- <form class="d-none d-md-flex ms-4">
         <input class="form-control border-0" type="search" placeholder="Search">
-    </form>
+    </form> --}}
     <div class="navbar-nav align-items-center ms-auto">
         <div class="nav-item dropdown">
-            <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
+            {{-- <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
                 <i class="fa fa-envelope me-lg-2"></i>
-                <span class="d-none d-lg-inline-flex">Message</span>
-            </a>
+                <span class="d-none d-lg-inline-flex"></span>
+            </a> --}}
             <div class="dropdown-menu dropdown-menu-end bg-light border-0 rounded-0 rounded-bottom m-0">
                 <a href="#" class="dropdown-item">
                     <div class="d-flex align-items-center">
@@ -125,10 +125,10 @@
             </div>
         </div>
         <div class="nav-item dropdown">
-            <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
+            {{-- <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
                 <i class="fa fa-bell me-lg-2"></i>
                 <span class="d-none d-lg-inline-flex">Notificatin</span>
-            </a>
+            </a> --}}
             <div class="dropdown-menu dropdown-menu-end bg-light border-0 rounded-0 rounded-bottom m-0">
                 <a href="#" class="dropdown-item">
                     <h6 class="fw-normal mb-0">Profile updated</h6>
@@ -150,12 +150,10 @@
         </div>
         <div class="nav-item dropdown">
             <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
-                <img class="rounded-circle me-lg-2" src="img/user.jpg" alt="" style="width: 40px; height: 40px;">
+                <img class="rounded-circle me-lg-2" src="" alt="" style="">
                 <span class="d-none d-lg-inline-flex">{{ auth()->user()->email }}</span>
             </a>
             <div class="dropdown-menu dropdown-menu-end bg-light border-0 rounded-0 rounded-bottom m-0">
-                <a href="#" class="dropdown-item">My Profile</a>
-                <a href="#" class="dropdown-item">Settings</a>
                 <a href="{{ route('login.keluar') }}" class="dropdown-item">Log Out</a>
             </div>
         </div>
