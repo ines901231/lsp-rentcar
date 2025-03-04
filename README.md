@@ -1,9 +1,11 @@
 # Rental Mobil Management System
 
 ## 📌 Deskripsi
+
 Aplikasi berbasis web untuk mengelola rental mobil. Aplikasi ini memungkinkan admin dan pemilik mobil untuk mengelola data mobil serta transaksi penyewaan. Dibangun menggunakan **Laravel 11** dan **SQLite**.
 
 ## 🚀 Fitur Utama
+
 - **Autentikasi Pengguna** (Admin & Pemilik Mobil)
 - **Manajemen Mobil** (Tambah, Edit, Hapus, dan Lihat Data Mobil)
 - **Manajemen Transaksi** (Lihat Riwayat Penyewaan)
@@ -12,34 +14,39 @@ Aplikasi berbasis web untuk mengelola rental mobil. Aplikasi ini memungkinkan ad
 - **Relasi Database** dengan Eloquent ORM
 
 ## 🛠️ Teknologi yang Digunakan
-| **Kategori**         | **Teknologi**          |
-|---------------------|----------------------|
-| **Backend**        | Laravel 11, PHP 8.4  |
-| **Frontend**       | TailwindCSS, Bootstrap, Blade Template |
-| **Asset Bundling** | Vite, Laravel Vite Plugin |
-| **Database**       | SQLite |
-| **API & AJAX**     | Axios |
-| **Development**    | Laravel Herd, TablePlus |
+
+| **Kategori**       | **Teknologi**                         |
+| ------------------ | ------------------------------------- |
+| **Backend**        | Laravel 11, PHP 8.4                   |
+| **Frontend**       | TailwindCSS, Flowbite, Blade Template |
+| **Asset Bundling** | Vite, Laravel Vite Plugin             |
+| **Database**       | SQLite                                |
+| **Development**    | Laravel Herd, TablePlus               |
 
 ## ⚙️ Instalasi
 
 1. **Clone Repository**
+
    ```bash
    git clone https://github.com/username/rental-mobil.git
    cd rental-mobil
    ```
 
 2. **Install Dependencies**
+
    ```bash
    composer install
    npm install
    ```
 
 3. **Konfigurasi Environment**
+
    - Salin file `.env.example` menjadi `.env`
+
    ```bash
    cp .env.example .env
    ```
+
    - Edit file `.env` untuk memastikan database menggunakan **SQLite**
      ```ini
      DB_CONNECTION=sqlite
@@ -51,11 +58,14 @@ Aplikasi berbasis web untuk mengelola rental mobil. Aplikasi ini memungkinkan ad
      ```
 
 4. **Generate Key & Migrate Database**
+
    ```bash
    php artisan key:generate
+   php artisan migrate
    ```
 
 5. **Menjalankan Server**
+
    - Jika menggunakan Laravel Herd:
      ```bash
      herd start
@@ -64,14 +74,10 @@ Aplikasi berbasis web untuk mengelola rental mobil. Aplikasi ini memungkinkan ad
      ```bash
      php artisan serve
      ```
-   
+
 6. **Menjalankan Vite (Frontend Dev Server)**
+
    ```bash
    npm run dev
    ```
-
-## 📜 Lisensi
-Proyek ini menggunakan lisensi **MIT**.
-
 ---
-
