@@ -68,7 +68,7 @@ Aplikasi berbasis web untuk mengelola rental mobil. Aplikasi ini memungkinkan ad
 
    - Jika menggunakan Laravel Herd:
      ```bash
-     herd start
+     Buka aja desktop app Herd
      ```
    - Jika tidak menggunakan Herd:
      ```bash
