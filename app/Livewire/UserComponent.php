@@ -8,24 +8,38 @@ use Livewire\WithPagination;
 use Illuminate\Support\Facades\Hash;
 use Livewire\WithoutUrlPagination;
 
+/**
+ * Komponen untuk mengelola data pengguna dalam sistem.
+ */
 class UserComponent extends Component
 {
     use WithPagination, WithoutUrlPagination;
     protected $paginationTheme = 'bootstrap';
     public $addPage, $editPage = false;
     public $nama, $email, $password, $role, $id;
+
+    /**
+     * Render daftar pengguna.
+     * @return \Illuminate\View\View
+     */
     public function render()
     {
         $data['user'] = User::paginate(2);
         return view('livewire.user-component', $data);
     }
 
+    /**
+     *  Membuka halaman tambah user.
+     */
     public function create()
     {
         $this->reset();
         $this->addPage = true;
     }
 
+    /**
+     *  Menyimpan data user baru.
+     */
     public function store()
     {
         $this->validate([
@@ -49,6 +63,9 @@ class UserComponent extends Component
         $this->reset();
     }
 
+    /**
+     *  Menghapus data user.
+     */
     public function destroy($id)
     {
         $cari=User::find($id);
@@ -57,6 +74,9 @@ class UserComponent extends Component
         $this->reset();
     }
 
+    /**
+     *  Mengedit data user.
+     */
     public function edit($id)
     {
         $this->reset();
@@ -68,6 +88,9 @@ class UserComponent extends Component
         $this->editPage = true;
     }
 
+    /**
+     *  Mengupdate data user.
+     */
     public function update()
     {
         $cari = User::find($this->id);

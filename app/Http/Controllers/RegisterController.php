@@ -6,10 +6,16 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 
+/**
+ * Class RegisterController
+ * Mengelola proses registrasi pengguna
+ */
 class RegisterController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * Menampilkan halaman registrasi
+     *
+     * @return \Illuminate\Contracts\View\View
      */
     public function index()
     {
@@ -25,7 +31,10 @@ class RegisterController extends Controller
     }
 
     /**
-     * Store a newly created resource in storage.
+     * Menyimpan data pengguna baru
+     *
+     * @param Request $request
+     * @return \Illuminate\Http\RedirectResponse
      */
     public function store(Request $request)
     {

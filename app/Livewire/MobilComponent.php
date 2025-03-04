@@ -10,23 +10,37 @@ use Livewire\WithoutUrlPagination;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 
+/**
+ * Komponen untuk mengelola mobil dalam sistem rental.
+ */
 class MobilComponent extends Component
 {
     use WithPagination, WithoutUrlPagination, WithFileUploads;
     protected $paginationTheme = 'bootstrap';
     public $addPage, $editPage = false;
     public $nopolisi, $merk, $jenis, $kapasitas, $harga, $foto, $id;
+
+    /**
+     * Render daftar mobil.
+     * @return \Illuminate\View\View
+     */
     public function render()
     {
         $data['mobil'] = Mobil::paginate(10);
         return view('livewire.mobil-component', $data);
     }
 
+    /**
+     * Membuka halaman tambah mobil.
+     */
     public function create()
     {
         $this->addPage = true;
     }
 
+    /**
+     * Menyimpan data mobil baru.
+     */
     public function store()
     {
         $this->validate([
@@ -56,6 +70,9 @@ class MobilComponent extends Component
         $this->reset();
     }
 
+    /**
+     * Mengedit data mobil.
+     */
     public function edit($id)
     {
         $this->editPage = true;
@@ -67,6 +84,9 @@ class MobilComponent extends Component
         $this->harga = $mobil->harga;
     }
 
+    /**
+     * Mengupdate data mobil.
+     */
     public function update()
     {
         $mobil = Mobil::find($this->id);
@@ -94,6 +114,9 @@ class MobilComponent extends Component
         $this->reset();
     }
 
+    /**
+     * Menghapus data mobil.
+     */
     public function destroy($id)
     {
         $mobil = Mobil::find($id);

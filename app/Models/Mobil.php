@@ -8,6 +8,10 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
+
+/**
+ * Model Mobil yang merupakan turunan dari Kendaraan
+ */
 class Mobil extends Kendaraan
 {
     

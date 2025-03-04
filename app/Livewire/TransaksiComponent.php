@@ -9,17 +9,28 @@ use Livewire\WithPagination;
 use Livewire\WithoutUrlPagination;
 use Illuminate\Support\Facades\Auth;
 
+/**
+ * Komponen untuk mengelola transaksi pemesanan mobil.
+ */
 class TransaksiComponent extends Component
 {
     use WithPagination, WithoutUrlPagination;
     public $addPage, $lihatPage = false;
     public $nama, $ponsel, $alamat, $lama, $tgl_pesan, $mobil_id, $harga, $total;
+
+    /**
+     * Render daftar mobil untuk disewa.
+     * @return \Illuminate\View\View
+     */
     public function render()
     {
         $data['mobil'] = Mobil::paginate(5);
         return view('livewire.transaksi-component', $data);
     }
 
+    /**
+     *  Membuka halaman tambah transaksi.
+     */
     public function create($id, $harga)
     {
         $this->mobil_id = $id;
@@ -27,6 +38,9 @@ class TransaksiComponent extends Component
         $this->addPage = true;
     }
 
+    /**
+     * Menghitung total biaya (harga*hari).
+     */
     public function hitung()
     {
         $lama = $this->lama;
@@ -34,6 +48,9 @@ class TransaksiComponent extends Component
         $this->total = $lama*$harga;
     }
 
+    /**
+     * Membuat data transaksi baru.
+     */
     public function store()
     {
         $this->validate([
@@ -70,6 +87,9 @@ class TransaksiComponent extends Component
         $this->reset();
     }
 
+    /**
+     * Melihat data transaksi.
+     */
     public function lihat()
     {
         $this->dataTransaksi['transaksi'] = Transaksi::paginate(10);

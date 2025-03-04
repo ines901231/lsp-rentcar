@@ -8,15 +8,22 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 
+/**
+ * Model untuk tabel "users"
+ * 
+ * @property int $id
+ * @property string $name
+ * @property string $email
+ * @property string $password
+ * @property string $role
+ */
 class User extends Authenticatable
 {
     /** @use HasFactory<\Database\Factories\UserFactory> */
     use HasFactory, Notifiable;
 
     /**
-     * The attributes that are mass assignable.
-     *
-     * @var list<string>
+     * @var array Kolom yang dapat diisi secara massal
      */
     protected $fillable = [
         'name',
@@ -26,9 +33,7 @@ class User extends Authenticatable
     ];
 
     /**
-     * The attributes that should be hidden for serialization.
-     *
-     * @var list<string>
+     * @var array Kolom yang disembunyikan dalam serialisasi
      */
     protected $hidden = [
         'password',
@@ -36,8 +41,8 @@ class User extends Authenticatable
     ];
 
     /**
-     * Get the attributes that should be cast.
-     *
+     * Mengembalikan tipe data yang harus di-cast
+     * 
      * @return array<string, string>
      */
     protected function casts(): array

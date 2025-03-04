@@ -8,10 +8,18 @@ use Livewire\Attributes\On;
 use Livewire\WithoutUrlPagination;
 use Livewire\WithPagination;
 
+/**
+ * Komponen untuk menampilkan laporan transaksi berdasarkan rentang tanggal.
+ */
 class LaporanComponent extends Component
 {
     use WithPagination, WithoutUrlPagination;
+    /** @var string|null */
     public $tanggal1, $tanggal2;
+    /**
+     * Render komponen laporan transaksi.
+     * @return \Illuminate\View\View
+     */
     #[On('lihat-laporan')]
     public function render()
     {
@@ -26,6 +34,9 @@ class LaporanComponent extends Component
         return view('livewire.laporan-component', $data);
     }
 
+    /**
+     * Memicu event Livewire untuk memperbarui tampilan laporan.
+     */
     public function cari()
     {
         $this->dispatch('lihat-laporan');
