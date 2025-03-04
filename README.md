@@ -18,7 +18,7 @@ Aplikasi berbasis web untuk mengelola rental mobil. Aplikasi ini memungkinkan ad
 | **Kategori**       | **Teknologi**                         |
 | ------------------ | ------------------------------------- |
 | **Backend**        | Laravel 11, PHP 8.4                   |
-| **Frontend**       | TailwindCSS, Flowbite, Blade Template |
+| **Frontend**       | TailwindCSS, Bootstrap, Blade Template|
 | **Asset Bundling** | Vite, Laravel Vite Plugin             |
 | **Database**       | SQLite                                |
 | **Development**    | Laravel Herd, TablePlus               |
