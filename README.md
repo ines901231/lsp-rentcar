@@ -53,7 +53,6 @@ Aplikasi berbasis web untuk mengelola rental mobil. Aplikasi ini memungkinkan ad
 4. **Generate Key & Migrate Database**
    ```bash
    php artisan key:generate
-   php artisan migrate --seed
    ```
 
 5. **Menjalankan Server**
