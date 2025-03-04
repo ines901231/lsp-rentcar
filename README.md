@@ -75,5 +75,4 @@ Aplikasi berbasis web untuk mengelola rental mobil. Aplikasi ini memungkinkan ad
 Proyek ini menggunakan lisensi **MIT**.
 
 ---
-Sekarang proyek ini terdokumentasi dengan lebih jelas dan sesuai dengan teknologi yang digunakan! 🚀
 
